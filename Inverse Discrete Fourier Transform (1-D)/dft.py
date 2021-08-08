@@ -1,10 +1,10 @@
-"""Computation of one-dimensional inverse discrete fourier transform (DFT)"""
+"""Computation of one-dimensional discrete fourier transform (DFT)"""
 import matplotlib.pyplot as plt
 import numpy as np
 
 
 def fourier_transform():
-    """Compute the one-dimensional inverse DFT of a wave"""
+    """Compute the one-dimensional DFT of a wave"""
     pi = np.pi
     signal_length = 0.5  # Duration in seconds
     sample_rate = 900  # Hz
@@ -20,7 +20,7 @@ def fourier_transform():
     sin_wave2 = np.sin(2 * pi * 70 * t + pi / 4)
 
     y = sin_wave1 + sin_wave2  # Adding the two sine waves
-    f = np.fft.ifft(y)  # compute the inverse fourier transform of y
+    f = np.fft.fft(y)  # compute the Fourier Transform of y
 
     freq = df * np.arange(0, (n_t - 1) / 2, dtype='d')  # d option for double precision float
     n_f = len(freq)
